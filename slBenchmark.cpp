@@ -78,7 +78,7 @@ double slImplementation::getDisplacement(double x_pattern, double x_image) {
     double xp = x_pattern/getPatternWidth();
     double gammac,gammap;// depths of view in radians.
     gammac = gammap = 49.134 * M_PI/180;  // TODO: build into the parameters of the class.
-    double tgc = tan(gammac), tgp = tan(gammap);
+    double tgc = tan(gammac/2), tgp = tan(gammap/2);
     double Delta = 1; // Distance between camera and projector
 
     return Delta / 2 / (tgc*xc - tgp*xp);
